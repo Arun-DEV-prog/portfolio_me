@@ -4,13 +4,13 @@ import { useParams, Link } from "react-router";
 const projectData = [
   {
     id: 1,
-    name: "Portfolio Website",
-    image: "https://via.placeholder.com/800x400?text=Portfolio+Website",
+    name: "ArtiFacts - A Historical website",
+    image: "https://i.ibb.co.com/WpFKDW7J/Macbook-Air-hobbyhub-1-web-app.png",
     techStack: ["React", "Tailwind CSS", "Framer Motion"],
     description:
       "A modern personal portfolio showcasing my skills, projects, and contact info.",
-    liveLink: "https://myportfolio.com",
-    github: "https://github.com/myusername/portfolio-client",
+    liveLink: "https://hobbyhub-1.web.app/",
+    github: "https://github.com/Arun-DEV-prog/artiCraft_client",
     challenges:
       "Ensuring perfect responsiveness and smooth animations without performance loss.",
     futurePlans: "Add a blog section and integrate CMS for dynamic content.",
@@ -49,7 +49,7 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="max-w-4xl mx-auto py-20 text-center text-white">
-        <p className="text-xl">Project not found.</p>
+        <p className="text-xl text-black">Project not found.</p>
         <Link to="/" className="text-indigo-500 underline">
           Go back
         </Link>
@@ -62,9 +62,9 @@ export default function ProjectDetail() {
       <img
         src={project.image}
         alt={project.name}
-        className="w-full h-64 object-cover rounded-xl shadow-lg mb-6"
+        className="w-full h-[500px] object-cover rounded-xl shadow-lg mb-6"
       />
-      <h1 className="text-3xl font-bold mb-4">{project.name}</h1>
+      <h1 className="text-3xl text-black font-bold mb-4">{project.name}</h1>
       <p className="mb-4 text-gray-300">{project.description}</p>
 
       <h3 className="text-xl font-semibold mt-6">Technology Stack</h3>

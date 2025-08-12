@@ -1,20 +1,20 @@
 import React from "react";
 import Navber from "../Navber/Navber";
-import { Outlet } from "react-router";
 import Hero from "../Hero/Hero";
 import Aboutme from "../Aboutme/Aboutme";
 import Tech_Skills from "../../Tech_Skills/Tech_Skills";
-import Marquee from "react-fast-marquee";
 import EducationSection from "../EducationSection/EducationSection";
 import ProjectsSection from "../ProjectsSection/ProjectsSection";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
+import RightNavbar from "../RightSideNavber/RightNavbar";
 
 const HomeLayout = () => {
   return (
     <div>
-      <div className="min-h-screen  relative bg-black">
-        {/* Copper Forge Background with Top Glow */}
+      {/* Main scroll container with relative position */}
+      <div className="min-h-screen relative bg-black">
+        {/* Background gradient */}
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -23,48 +23,53 @@ const HomeLayout = () => {
           }}
         />
 
-        {/* Your Content/Components */}
-        <div className=" ">
+        {/* Fixed right navbar */}
+        <RightNavbar />
+
+        {/* Content wrapper with relative position */}
+        <div className="relative z-20">
           <Navber />
-        </div>
-        <div className=" ">
-          <Hero />
-        </div>
-        <div>
-          <Aboutme />
-        </div>
-        <div>
-          <Tech_Skills />
-        </div>
 
-        <div className=" relative font-playwrite z-20 min-h-screen py-10">
-          <EducationSection
-            useMotion={false} // set true for Framer Motion
-            education={[
-              {
-                degree: "B.Sc. in Computer Science",
-                institution: "Gopalganj Science and Technology University",
-                year: "2021-22",
-                details: "Currently Studying",
-              },
-              {
-                degree: "Higher Secondary Certificate (HSC)",
-                institution: "Debigonj Govt College",
-                year: "2019",
-                details: "Science Group, GPA 5.00",
-              },
-            ]}
-          />
-        </div>
+          <div id="home">
+            <Hero />
+          </div>
 
-        <div className=" relative z-20">
-          <ProjectsSection />
-        </div>
+          <div id="about">
+            <Aboutme />
+          </div>
 
-        <div className="relative z-20">
-          <Contact />
-        </div>
-        <div className="relative z-20">
+          <div id="skills">
+            <Tech_Skills />
+          </div>
+
+          <div id="education" className="font-playwrite min-h-screen py-10">
+            <EducationSection
+              useMotion={false}
+              education={[
+                {
+                  degree: "B.Sc. in Computer Science",
+                  institution: "Gopalganj Science and Technology University",
+                  year: "2021-22",
+                  details: "Currently Studying",
+                },
+                {
+                  degree: "Higher Secondary Certificate (HSC)",
+                  institution: "Debigonj Govt College",
+                  year: "2019",
+                  details: "Science Group, GPA 5.00",
+                },
+              ]}
+            />
+          </div>
+
+          <div id="projects">
+            <ProjectsSection />
+          </div>
+
+          <div id="contact">
+            <Contact />
+          </div>
+
           <Footer />
         </div>
       </div>

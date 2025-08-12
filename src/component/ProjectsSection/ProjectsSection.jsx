@@ -8,7 +8,8 @@ const projects = [
   {
     id: 1,
     name: "Portfolio Website",
-    image: "https://via.placeholder.com/400x250?text=Portfolio+Website",
+    image:
+      "https://i.ibb.co.com/9342TcNM/i-Phone-13-PRO-hobbyhub-1-web-app.png",
     techStack: ["React", "Tailwind CSS", "Framer Motion"],
     description:
       "A modern personal portfolio showcasing my skills, projects, and contact info.",

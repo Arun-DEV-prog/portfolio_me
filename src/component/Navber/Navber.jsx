@@ -4,29 +4,26 @@ import LocalTime from "../../utilities/LocalTime";
 
 const Navbar = () => {
   return (
-    <div className=" w-full px-6 py-4  backdrop-blur-md  text-white z-20 border-b border-blue-800">
-      {/* Logo */}
-      <div className="flex items-center justify-between w-10/12 mx-auto ">
-        <div className="flex items-center ">
-          <img src={logo} alt="Logo" className="h-30 " />
-          <span className="font-bold font-playwrite text-3xl">Arun</span>
+    <div className="w-full px-6 backdrop-blur-md text-white z-20 border-b border-blue-800">
+      {/* Container: stacked on small, flex on md */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 py-4">
+        {/* Logo and Name */}
+        <div className="flex items-center space-x-3">
+          <img src={logo} alt="Logo" className="h-12 w-auto" />
+          <span className="font-bold font-playwrite text-2xl md:text-3xl">
+            Arun Kumar Roy
+          </span>
         </div>
 
-        <div className="">
-          <ul className=" flex space-x-3">
-            <li>home</li>
-            <li>home</li>
-            <li>home</li>
-            <li>home</li>
-          </ul>
-        </div>
+        {/* Download Resume Button */}
+        <button className="btn btn-accent border border-gray-500 hover:text-red-500 cursor-pointer px-6 py-2 rounded-xl font-playwrite text-lg md:text-xl">
+          Download resume
+        </button>
 
-        {/* Menu */}
-        <div>
-          <div className="font-playwrite ">
-            Dhaka,Bangladesh <br />
-            <LocalTime />
-          </div>
+        {/* Location and Local Time */}
+        <div className="font-playwrite text-center text-sm md:text-base">
+          Dhaka, Bangladesh <br />
+          <LocalTime />
         </div>
       </div>
     </div>
