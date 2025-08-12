@@ -42,7 +42,7 @@ const HomeLayout = () => {
             <Tech_Skills />
           </div>
 
-          <div id="education" className="font-playwrite min-h-screen py-10">
+          <div id="education" className="font-playwrite  py-10">
             <EducationSection
               useMotion={false}
               education={[
