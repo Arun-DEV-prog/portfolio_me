@@ -59,7 +59,7 @@ export default function EducationSection({
   };
 
   return (
-    <section className="max-w-6xl mx-auto py-12 px-4">
+    <section className="max-w-6xl mx-auto  px-4">
       {/* Section Heading */}
       <div className="flex items-center justify-center gap-4 mb-12">
         <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-500 to-pink-500 flex items-center justify-center text-white text-lg font-bold shadow-md">

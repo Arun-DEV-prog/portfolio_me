@@ -7,12 +7,11 @@ import { Link } from "react-router";
 const projects = [
   {
     id: 1,
-    name: "Portfolio Website",
-    image:
-      "https://i.ibb.co.com/9342TcNM/i-Phone-13-PRO-hobbyhub-1-web-app.png",
+    name: "ArtiFacts Website",
+    image: "https://i.ibb.co.com/twJyvDGK/Macbook-Air-hobbyhub-1-web-app-1.png",
     techStack: ["React", "Tailwind CSS", "Framer Motion"],
     description:
-      "A modern personal portfolio showcasing my skills, projects, and contact info.",
+      "Explore the fascinating stories behind ancient artifacts — each piece preserving the culture, traditions, and history of civilizations long past.",
     liveLink: "https://myportfolio.com",
     github: "https://github.com/myusername/portfolio-client",
     challenges:
@@ -21,12 +20,12 @@ const projects = [
   },
   {
     id: 2,
-    name: "E-Commerce App",
-    image: "https://via.placeholder.com/400x250?text=E-Commerce+App",
+    name: "Hobby Hub Websites",
+    image: "https://i.ibb.co.com/JW1KmMJP/Macbook-Air-arun1234-web-app-1.png",
     techStack: ["React", "Node.js", "MongoDB"],
     description:
-      "A full-stack e-commerce platform with cart, checkout, and payment integration.",
-    liveLink: "https://myecommerce.com",
+      "Welcome to the MyGroup web application — a platform where users can create, join, and manage interest-based groups.",
+    liveLink: "https://arun1234.web.app/",
     github: "https://github.com/myusername/ecommerce-client",
     challenges:
       "Managing state efficiently and handling large amounts of data in real-time.",
@@ -34,11 +33,11 @@ const projects = [
   },
   {
     id: 3,
-    name: "Chat Application",
-    image: "https://via.placeholder.com/400x250?text=Chat+Application",
+    name: "Micro-Tasking Platsform",
+    image: "https://i.ibb.co.com/JWsfjhv9/Macbook-Air-aruncse21-web-app.png",
     techStack: ["React", "Socket.IO", "Node.js"],
     description:
-      "A real-time chat app with private rooms, typing indicators, and file sharing.",
+      "A full-featured MERN stack platform where users can register as Workers or Buyers. Workers complete small tasks and earn coins, which they can later withdraw. Buyers can post tasks and pay workers upon approval. The platform includes real-time notifications, Stripe payments",
     liveLink: "https://mychatapp.com",
     github: "https://github.com/myusername/chatapp-client",
     challenges: "Optimizing WebSocket performance and ensuring security.",
@@ -61,7 +60,6 @@ function ProjectCard({ project, index }) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="bg-white/10 backdrop-blur-lg rounded-xl shadow-lg overflow-hidden border border-white/20 flex flex-col relative p-4"
-      style={{ position: "relative" }}
     >
       {/* Progress circle */}
       <figure
@@ -112,7 +110,7 @@ function ProjectCard({ project, index }) {
       <img
         src={project.image}
         alt={project.name}
-        className="h-48 w-full object-cover rounded-lg mb-4"
+        className=" w-full object-cover rounded-lg mb-4"
       />
       <h3 className="text-xl font-semibold mb-2 text-white">{project.name}</h3>
       <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
@@ -128,15 +126,33 @@ function ProjectCard({ project, index }) {
 
 export default function ProjectsSection() {
   return (
-    <section className="max-w-6xl mx-auto py-16 px-4">
-      <h2 className="text-3xl font-bold mb-10 text-center text-white">
+    <motion.section
+      className="max-w-6xl mx-auto py-16 px-4"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.h2
+        className="text-3xl font-bold mb-10 text-center text-white"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
         Projects
-      </h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      </motion.h2>
+      <motion.div
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.15 }}
+      >
         {projects.map((project, idx) => (
           <ProjectCard key={project.id} project={project} index={idx} />
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

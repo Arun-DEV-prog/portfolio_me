@@ -1,3 +1,4 @@
+import { div } from "framer-motion/client";
 import React from "react";
 import { useParams, Link } from "react-router";
 
@@ -17,13 +18,13 @@ const projectData = [
   },
   {
     id: 2,
-    name: "E-Commerce App",
-    image: "https://via.placeholder.com/800x400?text=E-Commerce+App",
+    name: "Hobby Hub Websites",
+    image: "https://i.ibb.co.com/JW1KmMJP/Macbook-Air-arun1234-web-app-1.png",
     techStack: ["React", "Node.js", "MongoDB"],
     description:
-      "A full-stack e-commerce platform with cart, checkout, and payment integration.",
-    liveLink: "https://myecommerce.com",
-    github: "https://github.com/myusername/ecommerce-client",
+      "Welcome to the Hobby Hub web application — a platform where users can create, join, and manage interest-based groups.",
+    liveLink: "https://arun1234.web.app/",
+    github: "https://github.com/Arun-DEV-prog/hobby-hub-client",
     challenges:
       "Managing state efficiently and handling large amounts of data in real-time.",
     futurePlans: "Implement AI-based product recommendations.",
@@ -31,7 +32,7 @@ const projectData = [
   {
     id: 3,
     name: "Chat Application",
-    image: "https://via.placeholder.com/800x400?text=Chat+Application",
+    image: "https://i.ibb.co.com/JWsfjhv9/Macbook-Air-aruncse21-web-app.png",
     techStack: ["React", "Socket.IO", "Node.js"],
     description:
       "A real-time chat app with private rooms, typing indicators, and file sharing.",
@@ -58,54 +59,58 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto py-16 px-4 text-white">
-      <img
-        src={project.image}
-        alt={project.name}
-        className="w-full h-[500px] object-cover rounded-xl shadow-lg mb-6"
-      />
-      <h1 className="text-3xl text-black font-bold mb-4">{project.name}</h1>
-      <p className="mb-4 text-gray-300">{project.description}</p>
+    <div className="min-h-screen relative bg-black">
+      <div className="max-w-4xl  mx-auto py-16 px-4 text-white">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full h-[500px] object-cover rounded-xl shadow-lg mb-6"
+        />
+        <h1 className="text-3xl text-black font-bold mb-4">{project.name}</h1>
+        <p className="mb-4 text-gray-300">{project.description}</p>
 
-      <h3 className="text-xl font-semibold mt-6">Technology Stack</h3>
-      <ul className="list-disc list-inside mb-4 text-gray-300">
-        {project.techStack.map((tech) => (
-          <li key={tech}>{tech}</li>
-        ))}
-      </ul>
+        <h3 className="text-xl font-semibold mt-6">Technology Stack</h3>
+        <ul className="list-disc list-inside mb-4 text-gray-300">
+          {project.techStack.map((tech) => (
+            <li key={tech}>{tech}</li>
+          ))}
+        </ul>
 
-      <h3 className="text-xl font-semibold mt-6">Live Project</h3>
-      <a
-        href={project.liveLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-indigo-400 underline block mb-4"
-      >
-        {project.liveLink}
-      </a>
+        <h3 className="text-xl font-semibold mt-6">Live Project</h3>
+        <a
+          href={project.liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-indigo-400 underline block mb-4"
+        >
+          {project.liveLink}
+        </a>
 
-      <h3 className="text-xl font-semibold mt-6">GitHub Repository (Client)</h3>
-      <a
-        href={project.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-indigo-400 underline block mb-4"
-      >
-        {project.github}
-      </a>
+        <h3 className="text-xl font-semibold mt-6">
+          GitHub Repository (Client)
+        </h3>
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-indigo-400 underline block mb-4"
+        >
+          {project.github}
+        </a>
 
-      <h3 className="text-xl font-semibold mt-6">Challenges Faced</h3>
-      <p className="text-gray-300 mb-4">{project.challenges}</p>
+        <h3 className="text-xl font-semibold mt-6">Challenges Faced</h3>
+        <p className="text-gray-300 mb-4">{project.challenges}</p>
 
-      <h3 className="text-xl font-semibold mt-6">Future Plans</h3>
-      <p className="text-gray-300">{project.futurePlans}</p>
+        <h3 className="text-xl font-semibold mt-6">Future Plans</h3>
+        <p className="text-gray-300">{project.futurePlans}</p>
 
-      <Link
-        to="/"
-        className="mt-8 inline-block bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors"
-      >
-        Back to Projects
-      </Link>
+        <Link
+          to="/"
+          className="mt-8 inline-block bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors"
+        >
+          Back to Home
+        </Link>
+      </div>
     </div>
   );
 }
